@@ -1,0 +1,1 @@
+export let AddMessage:(data:any)=> void 
