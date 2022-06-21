@@ -5,9 +5,8 @@ frontend:
       commands:
         - node --version
         - npm --version
-        - echo "//npm.pkg.github.com/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc
         - nvm install
-        - node --verion
+        - node --versßion
         - npm --version
         - npm ci
     build:
