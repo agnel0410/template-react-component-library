@@ -4,9 +4,6 @@ frontend:
     preBuild:
       commands:
         - npm --version
-        - npm cache clean --force
-        - npm i npm@latest
-        - npm --version
         - npm ci
     build:
       commands:
