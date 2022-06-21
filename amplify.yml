@@ -6,7 +6,7 @@ frontend:
         - npm cache clean --force
         - echo "//npm.pkg.github.com/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc
         - nvm install
-        - npm ci
+        - npm i
     build:
       commands:
         - npm run build-sb
