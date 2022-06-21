@@ -4,12 +4,12 @@ type Element = {
   
   export interface ButtonProps {
       content: {
-          elements:Element[]
+          backgroundColor?: string,
+          elements:Element[],
+          size?: 'small' | 'medium' | 'large',
+          fontFamily?:string;
       };
       addMessage: (data:any) => void;
-      backgroundColor?: string;
-      size?: 'small' | 'medium' | 'large';
-      fontFamily?:string;
   }
 
   export interface StyledButtonProps{

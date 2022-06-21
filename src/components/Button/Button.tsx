@@ -7,12 +7,10 @@ import { ButtonProps } from "./Button.types"
 const Button: React.FC<ButtonProps> = ({
   content, 
   addMessage,
-  backgroundColor,
-  size,
-  fontFamily,
   ...props
 }) => {
 
+  const {size, fontFamily, backgroundColor} = content;
   function onButtonClick(e: React.MouseEvent<HTMLButtonElement>): void {
     addMessage({ text: e.currentTarget.value });
   }
@@ -24,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
             <StyledButton 
               size={size} 
               fontFamily={fontFamily}
-              style={{ backgroundColor }}
+              style={{backgroundColor }}
               value={el.label} 
               key={content.elements.indexOf(el)} 
               onClick={onButtonClick}

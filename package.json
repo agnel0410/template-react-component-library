@@ -1,6 +1,6 @@
 {
     "name": "@agnel0410/template-react-component-library",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "agnel react component library 2",
     "scripts": {
         "r": "rollup -c",

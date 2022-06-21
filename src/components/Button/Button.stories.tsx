@@ -14,19 +14,17 @@ const LexResponseForMultipleButtons ={
       "replyMessage":{                             
          "title":"Thanks for selecting!",            
       },
-      "content":{                                       
+      "content":{  
+         "size": "large",                                     
          "elements":[                                   
             {
-               "label":"Apple",
-               "size": 'large',                     
+               "label":"Apple"                    
             },
             {
-               "label":"Orange",
-               "size": 'large',                        
+               "label":"Orange"                     
             },
              {
-               "label":"Banana",
-               "size": 'large',                        
+               "label":"Banana"                      
             }
          ]
       }
