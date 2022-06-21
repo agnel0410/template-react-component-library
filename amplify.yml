@@ -3,9 +3,11 @@ frontend:
   phases:
     preBuild:
       commands:
+        - node --version
         - npm --version
         - echo "//npm.pkg.github.com/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc
-        - npm cache clear --force && npm install --no-shrinkwrap --update-binary
+        - nvm install
+        - node --verion
         - npm --version
         - npm ci
     build:
