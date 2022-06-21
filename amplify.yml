@@ -6,7 +6,7 @@ frontend:
         - node --version
         - npm --version
         - nvm install
-        - node --versßion
+        - node --version
         - npm --version
         - npm ci
     build:
