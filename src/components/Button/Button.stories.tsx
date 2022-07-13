@@ -15,7 +15,9 @@ const LexResponseForMultipleButtons ={
          "title":"Thanks for selecting!",            
       },
       "content":{  
-         "size": "large",                                     
+         "size": "large",
+         "backgroundColor": "transparent",
+         "color": "black",                                  
          "elements":[                                   
             {
                "label":"Apple"                    
@@ -35,7 +37,10 @@ const LexResponseForMultipleButtons ={
 export default {
     title: 'InteractiveMessages/Button',
     argTypes: {
-        backgroundColor: { control: 'color' },
+       content:{
+         backgroundColor: { control: 'color' },
+       }
+        
       },
     component: Button,
 } as ComponentMeta<typeof Button>;

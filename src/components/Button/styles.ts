@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components'
-import { StyledButtonProps,ButtonProps } from "./Button.types"
+import { StyledButtonProps } from "./Button.types"
 
 
 
 export const StyledButton = styled.button<StyledButtonProps>`
   font-family: ${(props) => props.fontFamily? props.fontFamily : "'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif"};
+  color: ${(props) => props.color? props.color : "black"};
   font-weight: 700;
   border: 0;
   border-radius: 3em;

@@ -10,7 +10,8 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
 
-  const {size, fontFamily, backgroundColor} = content;
+  const {size, fontFamily, backgroundColor, color, elements} = content;
+
   function onButtonClick(e: React.MouseEvent<HTMLButtonElement>): void {
     addMessage({ text: e.currentTarget.value });
   }
@@ -18,8 +19,10 @@ const Button: React.FC<ButtonProps> = ({
   return(
     <div>
         {
-          content.elements.map(el=>(
-            <StyledButton 
+          elements.map(el=>(
+            <StyledButton
+              type = 'button'
+              color={color}
               size={size} 
               fontFamily={fontFamily}
               style={{backgroundColor }}

@@ -1,99 +1,60 @@
-import React from "react";
-import styled, { ThemeProvider } from "styled-components";
-import { Story, Meta } from "@storybook/react";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { su2cTheme, Text } from "..";
-import Carousel, { CarouselProps } from ".";
+
+import Carousel from './Carousel';
+
+const addMessage = (data:String):void=>{
+    console.log(data)
+}
+
+const LexResponseForCarousel ={
+    "templateType":"Carousel",                      
+    "version":"1.0",                                  
+    "data":{                                          
+      "replyMessage":{                             
+         "title":"Thanks for selecting!",            
+      },
+      "content":{  
+         "backgroundColor": "transparent",
+         "color": "black",
+         "buttonLabel":"View Recepie",                                  
+         "elements":[                                   
+            {
+                img:"https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+                title:"The Everyday Salad",
+                description:"Take your boring salads up a knotch. This recipe is perfect for lunch and only contains 5 ingredients!"                  
+            },
+            {
+                img:"https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+                title:"The Everyday Salad",
+                description:"Take your boring salads up a knotch. This recipe is perfect for lunch and only contains 5 ingredients!"                     
+            },
+             {
+                img:"https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+                title:"The Everyday Salad",
+                description:"Take your boring salads up a knotch. This recipe is perfect for lunch and only contains 5 ingredients!"                     
+            }
+         ]
+      }
+   }
+}
+
 
 export default {
-  title: "Carousel (experimental)",
-  component: Carousel,
-} as Meta<CarouselProps>;
+    title: 'InteractiveMessages/Carousel',
+    argTypes: {   
+      },
+    component: Carousel,
+} as ComponentMeta<typeof Carousel>;
 
-const Item = styled.div`
-  height: 200px;
-  background-color: #ddd;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-`;
 
-const Template: Story = (args) => (
-  <Carousel {...args}>
-    <Item>
-      <Text textAlign="center" marginVertical="auto" textSize="l">
-        Item 1
-      </Text>
-    </Item>
-    <Item>
-      <Text textAlign="center" marginVertical="auto" textSize="l">
-        Item 2
-      </Text>
-    </Item>
-    <Item>
-      <Text textAlign="center" marginVertical="auto" textSize="l">
-        Item 3
-      </Text>
-    </Item>
-    <Item>
-      <Text textAlign="center" marginVertical="auto" textSize="l">
-        Item 4
-      </Text>
-    </Item>
-    <Item>
-      <Text textAlign="center" marginVertical="auto" textSize="l">
-        Item 5
-      </Text>
-    </Item>
-    <Item>
-      <Text textAlign="center" marginVertical="auto" textSize="l">
-        Item 6
-      </Text>
-    </Item>
-  </Carousel>
-);
+const Template: ComponentStory<typeof Carousel> = (args) => <Carousel {...args} />;
 
-export const CarouselDefault: Story = Template.bind({});
-CarouselDefault.storyName = "Carousel";
-CarouselDefault.args = {};
 
-const TemplateWithSU2C: Story = (args) => (
-  <ThemeProvider theme={su2cTheme}>
-    <Carousel {...args}>
-      <Item>
-        <Text textAlign="center" marginVertical="auto" textSize="l">
-          Item 1
-        </Text>
-      </Item>
-      <Item>
-        <Text textAlign="center" marginVertical="auto" textSize="l">
-          Item 2
-        </Text>
-      </Item>
-      <Item>
-        <Text textAlign="center" marginVertical="auto" textSize="l">
-          Item 3
-        </Text>
-      </Item>
-      <Item>
-        <Text textAlign="center" marginVertical="auto" textSize="l">
-          Item 4
-        </Text>
-      </Item>
-      <Item>
-        <Text textAlign="center" marginVertical="auto" textSize="l">
-          Item 5
-        </Text>
-      </Item>
-      <Item>
-        <Text textAlign="center" marginVertical="auto" textSize="l">
-          Item 6
-        </Text>
-      </Item>
-    </Carousel>
-  </ThemeProvider>
-);
-
-export const SU2CCarousel: Story = TemplateWithSU2C.bind({});
-SU2CCarousel.storyName = "SU2C Carousel";
-SU2CCarousel.args = {};
+export const SliderCarousel = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+SliderCarousel.args = {
+    content: LexResponseForCarousel.data.content,
+    addMessage
+};

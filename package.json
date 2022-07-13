@@ -58,5 +58,7 @@
         "react": "^18.1.0",
         "styled-components": "^5.3.5"
     },
-    "dependencies": {}
+    "dependencies": {
+        "@itseasy21/react-elastic-carousel": "^0.12.1"
+    }
 }
